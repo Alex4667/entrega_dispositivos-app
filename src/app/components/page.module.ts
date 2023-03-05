@@ -13,7 +13,7 @@ import { PageRoutingModule } from './page-routing.module';
   ],
   imports: [
     CommonModule,
-    PageRoutingModule
+    PageRoutingModule,
   ]
 })
 export class PageModule { }

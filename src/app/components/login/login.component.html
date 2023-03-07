@@ -1,63 +1,8 @@
-<section class="vh-100" style="background-color: #eee;">
-  <div class="container h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-lg-12 col-xl-11">
-        <div class="card text-black" style="border-radius: 25px;">
-          <div class="card-body p-md-5">
-            <form class="p-5" [formGroup]="form" (ngSubmit)="login()">
-              <!-- Email input -->
-              <div class="form-outline mb-4">
-                <input type="email" id="form2Example1" class="form-control" formControlName="username"
-                  [ngClass]="{'is-invalid':submite && f['username'].errors}" />
-                <label class="form-label" for="form2Example1"> Email address</label>
-                <div *ngIf="submite && f['username'].errors" class="invalid-feedback">debe ingresar el username</div>
-              </div>
-
-              <!-- Password input -->
-              <div class="form-outline mb-4">
-                <input type="password" id="form2Example2" class="form-control" formControlName="password"
-                  [ngClass]="{'is-invalid':submite && f['password'].errors}" />
-                <label class="form-label" for="form2Example2">Password</label>
-                <div *ngIf="submite && f['password'].errors" class="invalid-feedback">debe ingresar la contra</div>
-
-              </div>
-
-              <!-- 2 column grid layout for inline styling -->
-              <div class="row mb-4">
-                <div class="col d-flex justify-content-center">
-                  <!-- Checkbox -->
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="form2Example34" checked />
-                    <label class="form-check-label" for="form2Example34"> Remember me </label>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <!-- Simple link -->
-                  <a href="#!">Forgot password?</a>
-                </div>
-              </div>
-
-              <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
-
-              <!-- Register buttons -->
-              <div class="text-center">
-                <p>Not a member? <a [routerLink]="'/register'">Register</a></p>
-                <p>or sign up with:</p>
-
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!--  -->
-
-<div id="id01" class="modal " >
-  <form class="modal-content animate" style="border-radius: 25px;"  action="checklogin.php" method="post">
+<body class="vh-100" style="background-color: #eee;">
+  
+<!-- Modal Login-->
+<div id="id01" class="modal">
+  <form class="modal-content animate" style="border-radius: 25px;" [formGroup]="form" (ngSubmit)="login()">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close"
         title="Close Modal">&times;</span>
@@ -67,25 +12,31 @@
     <h3 class="text-center text-dark">Iniciar sesion</h3>
 
     <div class="container h-100">
-      <label for="uname"><b>Usuario</b></label>
-      <input type="text" placeholder="Ingresar Usuario" name="username" required>
 
-      <label for="psw"><b>Contraseña</b></label>
-      <input type="password" placeholder="Ingresa tu Contraseña" name="password" required>
+      <!-- User input -->
+      <input class="form-control" type="text" placeholder="Ingresar Usuario" formControlName="username"
+        [ngClass]="{'is-invalid':submite && f['username'].errors}" />
+      <div *ngIf="submite && f['username'].errors" class="invalid-feedback">debe ingresar el username</div>
 
+      <!-- Password input -->
+      <input class="form-control" type="password" placeholder="Contraseña" formControlName="password"
+        [ngClass]="{'is-invalid':submite && f['password'].errors}">
+      <div *ngIf="submite && f['password'].errors" class="invalid-feedback">debe ingresar la contra</div>
+
+      <!-- Btn Login -->
       <button type="submit">Login</button>
+
       <label>
         <input type="checkbox" checked="checked" name="remember"> Recordarme
       </label>
     </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="location.href='CreateUser/'">Registrarse</button>
+    <!-- Register buttons -->
+    <div class="container"
+      style="background-color:#f1f1f1; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;">
+      <button type="button" [routerLink]="'/register'">Crear nueva cuenta</button>
     </div>
   </form>
 </div>
+</body>
 
-
-
-
-<!--  -->

@@ -1,14 +1,12 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-:root {
-  scroll-behavior: smooth;
-}
+
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: #f6f9ff;
-  color: #444444;
+  background: #000000;
+  color: #000000;
 }
 
 a {
@@ -35,7 +33,6 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 
-
 .header {
   transition: all 0.5s;
   z-index: 997;
@@ -51,7 +48,7 @@ h6 {
   font-size: 32px;
   padding-left: 10px;
   cursor: pointer;
-  color: #012970;
+  color: #000000;
 }
 
 .logo {
@@ -60,7 +57,7 @@ h6 {
 
 @media (min-width: 1200px) {
   .logo {
-    width: 280px;
+    width: 200px;
   }
 }
 
@@ -87,8 +84,6 @@ h6 {
 
 .header-nav ul {
   list-style: none;
-
-
 }
 
 .header-nav>ul {
@@ -97,6 +92,7 @@ h6 {
 
 }
 
+/* Perfil */
 .header-nav .nav-profile {
   color: #012970;
 }
@@ -146,7 +142,7 @@ h6 {
 /*--------------------------------------------------------------
 # Panel lateral
 --------------------------------------------------------------*/
-.sidebar {
+/*.sidebar {
   position: fixed;
   top: 60px;
   left: 0;
@@ -161,10 +157,20 @@ h6 {
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
   background-color: #fff;
   transform: translateX(-100%);
+  /* El menú está fuera de la pantalla 
   transition: transform 0.3s ease-in-out;
+}*/
+
+/* Clase active para mostrar el menú */
+/* .sidebar-container.active {
+  left: 0;
 }
 
-/* .menu {
+.sidebar.active {
+  transform: translateX(0);
+
+} */
+.menu {
   position: fixed;
   top: 60px;
   left: 0;
@@ -178,16 +184,17 @@ h6 {
   scrollbar-color: #aab7cf transparent;
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
   background-color: #fff;
-  transform: translateX(-100%); /* El menú está fuera de la pantalla 
-  transition: transform 0.3s ease-in-out; 
-} */
+  transform: translateX(-100%);
+  /* El menú está fuera de la pantalla */
+  transition: transform 0.3s ease-in-out;
+}
 
 /* Clase active para mostrar el menú */
 .menu-container.active {
   left: 0;
 }
 
-.sidebar.active {
+.menu.active {
   transform: translateX(0);
 }
 

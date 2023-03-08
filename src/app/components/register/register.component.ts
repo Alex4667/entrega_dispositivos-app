@@ -22,7 +22,11 @@ export class RegisterComponent {
 
   ngOnInit(): void {
     this.form = this.fb.group({
+      nombres: ['', Validators.required],
       username: ['', Validators.required],
+      identificacion: ['', Validators.required],
+      celular: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required]
     })
   }

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PerfilComponent } from './perfil/perfil.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageRoutingModule } from './page-routing.module';
-import { RegisterComponent } from './register/register.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 
 
@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
   declarations: [
     PerfilComponent,
     DashboardComponent,
+    SidenavComponent,
     
   ],
   imports: [

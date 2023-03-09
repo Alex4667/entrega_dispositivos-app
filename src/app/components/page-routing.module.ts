@@ -2,15 +2,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 
 const routes: Routes = [
-    {path: '', 
-    component: DashboardComponent, 
+    {path: '', component: DashboardComponent, 
     children: [
         {path: 'perfil', component: PerfilComponent},
+        {path:'nav', component: SidenavComponent}
 
     ]}
 ];

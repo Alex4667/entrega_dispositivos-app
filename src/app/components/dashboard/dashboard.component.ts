@@ -1,5 +1,6 @@
-import { Component, ElementRef } from '@angular/core';
+import { AfterViewInit, Component, ElementRef } from '@angular/core';
 
+import * as $ from 'jquery';
 
 declare var jQuery: any; // declara la variable global de jQuery
 
@@ -10,14 +11,8 @@ declare var jQuery: any; // declara la variable global de jQuery
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  
-// Funcion deplegar Sidebar
-  isMenuOpen = true;
-
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
-
 
 }
+
+
 

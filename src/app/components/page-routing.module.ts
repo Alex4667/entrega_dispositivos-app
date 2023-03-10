@@ -9,8 +9,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 const routes: Routes = [
     {path: '', component: DashboardComponent, 
     children: [
-        {path: 'perfil', component: PerfilComponent},
-        {path:'nav', component: SidenavComponent}
+        {path: 'perfil', component: PerfilComponent}
+        
 
     ]}
 ];

@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     this._usuarioService.login(this.form.value).subscribe({
       next: (data)=>{
           this._jwt.login(data.access_token);
-         void this._route.navigateByUrl('/dashboard');
+         void this._route.navigateByUrl('dashboard');
       }
     });
 

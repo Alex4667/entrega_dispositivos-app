@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class SidenavComponent {
 
+  // Funcion deplegar Sidebar
+  isMenuOpen = true;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
 }

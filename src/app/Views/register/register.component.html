@@ -1,0 +1,48 @@
+<!-- Modal Register-->
+<div class="modal d-block py-5" id="modalRegister">
+    <div class="modal-dialog animate" role="document">
+        <div class="modal-content rounded-5 shadow">
+            <div class="modal-body p-4 pt-0">
+                <p class="text-center h1 fw-bold  mx-1 mx-md-4 mt-4">Registrar</p>
+                <hr>
+                <!--  -->
+                <form class="form" name="formulario" [formGroup]="form" (ngSubmit)="registrar()">
+
+                    <!-- Input User -->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" type="text" id="username" placeholder="username"
+                            [ngClass]="{'is-invalid':submite && f['username'].errors}" formControlName="username" />
+                        <label class="form-label">Usuario</label>
+                        <div *ngIf="submite && f['username'].errors" class="invalid-feedback">Debe
+                            ingresar un Nombre de Usuario
+                        </div>
+                    </div>
+
+                    <!-- IP -->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" type="text" id="IP" placeholder="IP" value="" disabled />
+                        <label class="form-label">IP</label>
+                    </div>
+
+                    <!-- Input password -->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" type="password" id="password" placeholder="password"
+                            [ngClass]="{'is-invalid':submite && f['password'].errors}" formControlName="password" />
+                        <label class="form-label">Contraseña</label>
+                        <div *ngIf="submite && f['password'].errors" class="invalid-feedback">Debe
+                            ingresar una Contraseña
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Botn -->
+                    <div class="d-grid mb-1">
+                        <button class="mb-3" type="submit">Registrar</button>
+                    </div>
+                </form>
+                <!-- Back to login -->
+                <a class="texto_footer d-flex justify-content-center btn btn-lg" [routerLink]="'/login'"><i
+                        class="bi bi-arrow-bar-left me-1"></i>Regresar al Login</a>
+            </div>
+        </div>
+    </div>
+</div>

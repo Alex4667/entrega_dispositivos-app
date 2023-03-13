@@ -8,6 +8,7 @@ import { UsuarioService } from 'src/app/Services/usuario.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
+
 })
 export class LoginComponent implements OnInit {
 
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
   })
 
   constructor(private _route: Router, private _usuarioService: UsuarioService, private fb: FormBuilder,
-    private _jwt:JwtService) { }
+    private _jwt: JwtService) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -36,19 +37,19 @@ export class LoginComponent implements OnInit {
     }
 
     this._usuarioService.login(this.form.value).subscribe({
-      next: (data)=>{
-          this._jwt.login(data.access_token);
-         void this._route.navigateByUrl('dashboard');
+      next: (data) => {
+        this._jwt.login(data.access_token);
+        void this._route.navigateByUrl('dashboard');
       }
     });
 
-    
+
   }
 
-  cerrarSesion(){
+  cerrarSesion() {
     localStorage.clear();
   }
-  get f(): { [key: string]:AbstractControl }{
+  get f(): { [key: string]: AbstractControl } {
     return this.form.controls;
   }
 
